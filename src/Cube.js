@@ -16,37 +16,25 @@ class Cube {
 
         gl.uniform4f(u_FragColor, rgba[0], rgba[1], rgba[2], rgba[3]);
         gl.uniformMatrix4fv(u_ModelMatrix, false, this.matrix.elements);
-        drawTriangle3D([0.0,0.0,0.0,  1.0,1.0,0.0,  1.0,0.0,0.0]);
-        drawTriangle3D([0.0,0.0,0.0,  0.0,1.0,0.0,  1.0,1.0,0.0]); 
-        /* const vertices = this.genCircleVertices(xy[0], xy[1], d);
+        // front
+        drawTriangle3D([0.0, 0.0, 0.0,   1.0, 1.0, 0.0,   1.0, 0.0, 0.0]);
+        drawTriangle3D([0.0, 0.0, 0.0,   0.0, 1.0, 0.0,   1.0, 1.0, 0.0]);
 
-        const vertexBuffer = gl.createBuffer();
-        if (!vertexBuffer) {
-            console.log('Failed to create the buffer object');
-            return;
-        }
+        drawTriangle3D([0.0, 0.0, 1.0,   1.0, 1.0, 1.0,   1.0, 0.0, 1.0]);
+        drawTriangle3D([0.0, 0.0, 1.0,   0.0, 1.0, 1.0,   1.0, 1.0, 1.0]);
 
-        // Bind the buffer object to target
-        gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer);
-        gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertices), gl.DYNAMIC_DRAW);
+        drawTriangle3D([0.0, 0.0, 0.0,   0.0, 1.0, 1.0,   0.0, 0.0, 1.0]);
+        drawTriangle3D([0.0, 0.0, 0.0,   0.0, 1.0, 0.0,   0.0, 1.0, 1.0]);
 
-        // Assign the buffer object to a_Position variable
-        gl.vertexAttribPointer(a_Position, 2, gl.FLOAT, false, 0, 0);
+        drawTriangle3D([1.0, 0.0, 0.0,   1.0, 1.0, 1.0,   1.0, 0.0, 1.0]);
+        drawTriangle3D([1.0, 0.0, 0.0,   1.0, 1.0, 0.0,   1.0, 1.0, 1.0]);
 
-        // Enable the assignment to a_Position variable
-        gl.enableVertexAttribArray(a_Position);
+        gl.uniform4f(u_FragColor, rgba[0] * .9, rgba[1] * .9, rgba[2] * .9, rgba[3]);
 
-        // Draw the circle as a triangle fan
-        gl.drawArrays(gl.TRIANGLE_FAN, 0, this.segments + 2);
-    }
+        drawTriangle3D([0.0, 1.0, 0.0,   1.0, 1.0, 1.0,   1.0, 1.0, 0.0]);
+        drawTriangle3D([0.0, 1.0, 0.0,   0.0, 1.0, 1.0,   1.0, 1.0, 1.0]);
 
-    genCircleVertices(centerX, centerY, radius) {
-        const vertices = [centerX, centerY]; // Center point of the circle
-        for (let i = 0; i <= this.segments; i++) {
-            const angle = (i * 2 * Math.PI) / this.segments;
-            vertices.push(centerX + radius * Math.cos(angle));
-            vertices.push(centerY + radius * Math.sin(angle));
-        }
-        return vertices; */
+        drawTriangle3D([0.0, 0.0, 0.0,   1.0, 0.0, 1.0,   1.0, 0.0, 0.0]);
+        drawTriangle3D([0.0, 0.0, 0.0,   0.0, 0.0, 1.0,   1.0, 0.0, 1.0]);
     }
 }

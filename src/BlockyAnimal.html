@@ -10,6 +10,8 @@
     Please use a browser that supports "canvas"
     </canvas>
     <p>
+    <div id="fps" >FPS: </div>
+    <!-- <p>
     <button type="button" id="clearButton">Clear</button>
     <p>
     <button type="button" id="green">Green</button>
@@ -20,23 +22,42 @@
     <button type="button" id="cirButton">Circle</button>
     <p>
     <button type="button" id="sunButton">Draw Sun</button>
+    <p> -->
+    Animation: <button type="button" id="animationButton">Enable</button>
 
 
-    <p>
+
+    <!-- <p>
     Red <input type="range" min="0" max="100" value="100" class="slider" id="redSlide">
     <p>
     Green <input type="range" min="0" max="100" value="0" class="slider" id="greenSlide">
     <p>
-    Blue <input type="range" min="0" max="100" value="0" class="slider" id="blueSlide">
+    Blue <input type="range" min="0" max="100" value="0" class="slider" id="blueSlide"> -->
     <p>
-    Size <input type="range" min="5" max="40" value="0" class="slider" id="sizeSlide">
+    Camera Angle X <input type="range" min="0" max="270" value="5" class="slider" id="angleXSlide">
+    <p>
+    Camera Angle Y <input type="range" min="0" max="270" value="5" class="slider" id="angleYSlide">
+    <p>
+    Limb Control <input type="range" min="-40" max="40" value="0" class="slider" id="limbSlide">
+    <p>
+    Lower Limb Angle: <input type="range" min="0" max="45" value="0" class="slider" id="lowerArmSlider">
+    <p>
+    Foot Angle: <input type="range" min="" max="30" value="0" class="slider" id="footSlider">
+    <p>
+    Tail Control <input type="range" min="0" max="30" value="0" class="slider" id="tailSlide">
+    <p>
+    Head Tilt <input type="range" min="-5" max="20" value="0" class="slider" id="headSlide">
+    <p>
     
     <script src="../lib/webgl-utils.js"></script>
     <script src="../lib/webgl-debug.js"></script>
     <script src="../lib/cuon-utils.js"></script>
+    <script src="../lib/cuon-matrix.js"></script>
     <script src="Circle.js"></script>
+    <script src="Cube.js"></script>
     <script src="Triangle.js"></script>
+    <script src="Cylinder.js"></script>
     <script src="Point.js"></script>
-    <script src="ColoredPoints.js"></script>
+    <script src="BlockyAnimal.js"></script>
   </body>
 </html>
